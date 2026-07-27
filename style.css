@@ -1,0 +1,274 @@
+/* Windward Media — the Masthead and the Slate. Spec: docs/superpowers/specs/2026-07-27-media-masthead-slate-design.md */
+
+:root {
+  color-scheme: light dark;
+  --g: #f8f4ea;
+  --ink: #1d2433;
+  --mut: #5f6878;
+  --line: #ded7c6;
+  --gold: #c9a25e;
+  --gold-ink: #8a6b39;
+  --kf-stroke: #202e4d;
+  --hf-fill: #202e4d;
+  --hf-stroke: transparent;
+  --hf-sw: 0;
+  --hf-dot: #c9a25e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --g: #111527;
+  --ink: #e8e5da;
+  --mut: #99a0b0;
+  --line: rgba(232, 229, 218, 0.14);
+  --gold: #c9a25e;
+  --gold-ink: #d9bd85;
+  --kf-stroke: #d9bd85;
+  --hf-fill: transparent;
+  --hf-stroke: #d9bd85;
+  --hf-sw: 1.6;
+  --hf-dot: #d9bd85;
+  }
+}
+
+/* The lamp: a stored choice outranks the OS preference */
+:root[data-theme="light"] {
+  --g: #f8f4ea;
+  --ink: #1d2433;
+  --mut: #5f6878;
+  --line: #ded7c6;
+  --gold: #c9a25e;
+  --gold-ink: #8a6b39;
+  --kf-stroke: #202e4d;
+  --hf-fill: #202e4d;
+  --hf-stroke: transparent;
+  --hf-sw: 0;
+  --hf-dot: #c9a25e;
+}
+:root[data-theme="dark"] {
+  --g: #111527;
+  --ink: #e8e5da;
+  --mut: #99a0b0;
+  --line: rgba(232, 229, 218, 0.14);
+  --gold: #c9a25e;
+  --gold-ink: #d9bd85;
+  --kf-stroke: #d9bd85;
+  --hf-fill: transparent;
+  --hf-stroke: #d9bd85;
+  --hf-sw: 1.6;
+  --hf-dot: #d9bd85;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/EBGaramond-Roman.woff2) format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/EBGaramond-Italic.woff2) format("woff2");
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: "EB Garamond", Georgia, serif;
+  background: var(--g);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* flags — division fields are constant; only the mount flips (flag law) */
+.kflag .mount { stroke: var(--kf-stroke); }
+.hflag .f { fill: var(--hf-fill); stroke: var(--hf-stroke); stroke-width: var(--hf-sw); }
+.hflag .d { fill: var(--hf-dot); }
+
+/* top bar */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 13px; }
+.brand-name {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.top-right { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: flex-end; }
+.top-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--mut);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.top-link:hover { color: var(--gold-ink); }
+
+/* the lamp */
+.lamp { display: flex; align-items: center; gap: 2px; }
+.lamp-opt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 8px 8px;
+  cursor: pointer;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+.lamp-opt::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-ink);
+  flex: none;
+}
+.lamp-opt:hover { color: var(--gold-ink); }
+.lamp-opt:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.lamp-opt[aria-pressed="true"] { color: var(--ink); }
+.lamp-opt[aria-pressed="true"]::before {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 5px rgba(201, 162, 94, 0.55);
+}
+
+/* masthead hero — the one centered page in the family */
+.hero { padding: 96px 0 58px; text-align: center; }
+.hero-h1 {
+  font-weight: 600;
+  font-size: clamp(32px, 5.2vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  max-width: 15ch;
+  margin: 0 auto;
+}
+.hero-sub {
+  margin-top: 18px;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--mut);
+}
+.hero-status {
+  margin-top: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+.hero-status .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  flex: none;
+}
+
+/* the slate */
+.slate {
+  border-top: 3px double var(--line);
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 40px 0 8px;
+  text-align: center;
+}
+.slate-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.slate-note {
+  margin-top: 16px;
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--mut);
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* contact */
+.contact { padding: 64px 0 20px; text-align: center; }
+.contact-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.contact-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+.contact-link:hover { color: var(--gold-ink); }
+.contact-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* footer */
+.foot {
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+  padding: 26px 0 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+.plate { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.plate-text {
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+.plate-diamond {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex: none;
+}
+.plate-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mut);
+  text-decoration: none;
+}
+.plate-link:hover { color: var(--gold-ink); }
+.foot-copy { font-size: 12.5px; color: var(--mut); }
