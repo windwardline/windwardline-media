@@ -4,6 +4,8 @@ Windward Media, the production division of Windward Line — renamed from
 Windward Creative so the division is never boxed into one medium. Original
 work of the house; the first works are in development.
 
+![The masthead: original work of the house, first works in development](docs/readme-hero.png)
+
 Static site, no build step: two HTML pages (the masthead and `/schedule`,
 which embeds the division's Koalendar booking page), one stylesheet,
 self-hosted EB Garamond, the division signal flag (Kilo — "I wish to
