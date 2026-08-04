@@ -8,7 +8,7 @@ Any static server for preview. CI-equivalent: `npx --yes html-validate@9 index.h
 
 ## Gates
 
-CI is html-validate on `index.html` plus the `vercel.json` parse. `schedule.html` and `script.js` are not checked. Push to main deploys production. A parallel `security.yml` (PRs, pushes, weekly cron) gates Semgrep and secret scan; a post-deploy job asserts the production security headers.
+CI is html-validate on `index.html` plus the `vercel.json` parse. `schedule.html` and `script.js` are not checked. Push to main deploys production. A parallel `security.yml` (PRs, pushes, weekly cron) gates Semgrep and secret scan; a post-deploy job asserts the production security headers. An advisory Claude review runs on every PR (`claude-review.yml`, activating once the `ANTHROPIC_API_KEY` repo secret exists).
 
 ## Laws
 
