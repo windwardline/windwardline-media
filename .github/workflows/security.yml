@@ -49,6 +49,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # A step, not a job: the gate rides an already-required check, so no
+      # ruleset changes. Fleet-shared at @main, like the review lane.
+      - uses: windwardline/windwardline/actions/verify-action-pins@main
+
   headers-live:
     name: Headers live
     if: github.event_name != 'pull_request'
