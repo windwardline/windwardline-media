@@ -15,9 +15,9 @@ class word, Media, is now the name). Status stays In Development.
 Vertical halves: gold `#c9a25e` at the hoist, navy `#202e4d` at the fly.
 The code's communication flag is a media house's entire purpose. Kilo was
 the Strategy round's declined runner-up; the letter that means
-communication finds its true station. The finished fleet reads as two
-pairs: makers in ship's colors (Labs P, Capital S — navy and paper),
-voices in the house metal (Strategy G, Media K — gold and navy).
+communication finds its true station. The finished fleet reads as the
+maker in ship's colors (Labs P — navy and paper), the voices in the
+house metal (Strategy G, Media K — gold and navy).
 
 **Flag law applies**: the halves never change, on any site, in any theme.
 Only the mounting stroke flips — navy day, gold `#d9bd85` night (1.4px
