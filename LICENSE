@@ -11,6 +11,11 @@ sublicense, sell, create derivative works from, or otherwise exploit any
 portion of this repository without prior written permission from the
 copyright holder.
 
+The files under fonts/ are excepted from the notice above. EB Garamond is the
+work of the EB Garamond Project Authors and is licensed under the SIL Open Font
+License, Version 1.1. Its copyright notice and the full license text are in
+fonts/OFL.txt, and they govern those files.
+
 Access to or visibility of this repository does not grant any license or
 waive any rights. Third-party materials, if any, remain subject to their
 respective licenses and notices.

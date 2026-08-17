@@ -14,3 +14,7 @@ spec: [docs/superpowers/specs/2026-07-27-media-masthead-slate-design.md](docs/su
 
 Deployed on Vercel; DNS on Cloudflare. Pushes to `main` deploy to production.
 Security headers are set in [vercel.json](vercel.json).
+
+The code and text here are proprietary ([LICENSE](LICENSE)). EB Garamond is
+not: it ships under the SIL Open Font License 1.1, and its copyright notice and
+license text travel with the fonts in [fonts/OFL.txt](fonts/OFL.txt).

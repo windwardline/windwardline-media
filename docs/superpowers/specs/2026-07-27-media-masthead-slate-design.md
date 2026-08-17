@@ -2,6 +2,9 @@
 
 **Date:** 2026-07-27 · **Status:** approved (owner picked K, an A+C hybrid, and class Production)
 
+**Amended:** 2026-08-16 — the repository publishes public. Inherited standards
+read "private repo" when the spec was approved.
+
 ## The division
 
 Fourth and final division site. Renamed **Windward Creative → Windward
@@ -44,7 +47,7 @@ night; family four-block token pattern; gold kickers.
 ## Inherited standards
 
 Lamp; new-tab links (mailto exempt); favicon standard (svg + BMP ico +
-apple touch, light rendition on the print-stock plate); private repo;
+apple touch, light rendition on the print-stock plate); public repo;
 `.vercelignore` docs; CSP all-self; CI html-validate + vercel.json parse.
 
 ## Launch day (standing decisions — TWO fire at once)

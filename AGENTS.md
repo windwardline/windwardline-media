@@ -15,5 +15,6 @@ CI is html-validate on `index.html` plus the `vercel.json` parse. `schedule.html
 - Koalendar slug `windward-media` is hardcoded in `schedule.html`; CSP `frame-src https://koalendar.com` in `vercel.json`; change both together or the iframe silently blanks.
 - The Kilo flag ("I wish to communicate with you") is inline SVG in both HTML files with hardcoded fills (`#c9a25e` left, `#202e4d` right) — only the mount stroke is themed. A palette change touches the SVGs by hand.
 - Four `:root` blocks (base, `@media` dark, `[data-theme="light"]`, `[data-theme="dark"]`) — an accent change needs all four. `--gold #c9a25e` is constant across themes; `--gold-ink #8a6b39` goes dark `#d9bd85`.
+- `fonts/` carries its own license. EB Garamond ships under the SIL OFL 1.1, `fonts/OFL.txt` holds the upstream copyright line and the verbatim license text, and `LICENSE` excepts `fonts/` from the proprietary notice. Adding or replacing a family adds its copyright line to `fonts/OFL.txt` in the same change set.
 - Never commit `.env.local` — `vercel link` drops an OIDC token there.
 - `cleanUrls: true` maps `/schedule` → `schedule.html`. `.vercelignore` excludes `docs/`.
