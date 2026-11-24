@@ -45,7 +45,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: windwardline/windwardline/actions/secret-scan@45d0e5d0c1ca1d32f1807ca1efea42956fcd3a10 # v1.2.0
+      - uses: windwardline/windwardline/actions/secret-scan@942a00bd88baffc68a218020260ded794ae5c3d6 # v1.2.0
 
       # A step, not a job: the gate rides an already-required check, so no
       # ruleset change. Pinned by SHA like every other action — the gate that
