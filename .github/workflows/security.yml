@@ -45,14 +45,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      # gitleaks itself, digest-pinned (v8.30.1), not gitleaks-action: the action
-      # asks the GitHub API whether the owner is an organization before it scans,
-      # and on any API error it demands a commercial license and fails. One
-      # timeout held this check red from 2026-11-16 to 2026-11-23. The full
-      # history is scanned; exit 1 on any finding.
-      - uses: docker://ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
-        with:
-          args: git --redact --verbose --exit-code 1 .
+      - uses: windwardline/windwardline/actions/secret-scan@45d0e5d0c1ca1d32f1807ca1efea42956fcd3a10 # v1.2.0
 
       # A step, not a job: the gate rides an already-required check, so no
       # ruleset change. Pinned by SHA like every other action — the gate that
